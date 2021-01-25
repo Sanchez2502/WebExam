@@ -1,17 +1,32 @@
-* {
-  margin:0px;
-  padding:0px;
+body{
+  margin:0;
+  padding:0;	
 }
 
-#octocat {
-  display: block;
-  width:384px;
-  margin: 50px auto;
+h1{
+  text-align: center;
 }
 
-p {
-  display: block;
-  width: 400px;
-  margin: 50px auto;
-  font: 30px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+h2{
+  text-align: center;
 }
+
+.message{
+  text-align: center;
+}
+.itm-lst{
+  width: max-content;
+  margin-left: 30%;
+	float:left;
+}
+
+.itm-elem{
+  margin-left: 10px;
+  width:max-content;
+	float: left;
+}
+
+.itm-elem div{
+  height: 50px;
+}
+
