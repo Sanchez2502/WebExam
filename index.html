@@ -1,18 +1,60 @@
 <!DOCTYPE html>
+<html ng-app="exam">
 
-<html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-  <title>my-first-website</title>
-  <LINK href="styles.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.0/angular.min.js">
+
+	</script>
+	<script type="text/javascript" src="app.js">
+
+	</script>
+	<link rel="stylesheet" href="styles.css">
+	<title>Exam</title>
 </head>
 
 <body>
+	<header>
+		<h1>Exam</h1>
+	</header>
+	<main>
+		<div class='ng-app' ng-controller='toBuyController as toBuyCntr'>
+			
+      <h2>List of toys</h2>
 
-<img src="https://octodex.github.com/images/daftpunktocat-thomas.gif" id="octocat" alt="octocat-gif" />
+			<div class='message' ng-if="toBuyCntr.toBuyItems.length == 0">
+				there no items in list
+			</div>
 
-<!-- Change this code here by copy and pasting your template on line 15 -->
-<p>Welcome to your first GitHub Pages website!</p>
+			<div class='itm-lst'>
+				<ol type="1">					
+          <div class="itm-elem">
+						<div ng-repeat="item in toBuyCntr.toBuyItems">
+							<div ng-hide="toBuyCntr.toBuyItems[$index].condition==false">
+								<li>Наявно {{item.amount}} іграшок {{item.mark}}</li>
+							</div>
+						</div>
+					</div>
 
+					<div class="itm-elem">
+						<div ng-repeat="item in toBuyCntr.toBuyItems">
+							<div ng-hide="toBuyCntr.toBuyItems[$index].condition==false">
+								<button ng-click="toBuyCntr.hideToBought($index)">Hide</button>
+              </div>  
+            </div>
+          </div>
+
+          <div class="itm-elem">
+            <div ng-repeat="item in toBuyCntr.toBuyItems">
+              <div ng-hide="toBuyCntr.toBuyItems[$index].condition==false">
+                <button ng-click="toBuyCntr.addToBought($index)">Delete</button>
+              </div>  
+            </div>
+          </div>
+        </ol>
+      </div>
+    </div>
+  </main>
 </body>
+
 </html>
